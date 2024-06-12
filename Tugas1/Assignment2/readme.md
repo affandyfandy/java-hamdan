@@ -86,7 +86,7 @@ The dog barks.
 Polymorphism allows objects of different classes to be treated as objects of a common superclass. It provides the ability to call the same method on different objects and have each of them respond in their own way.
 
 <p align="center">
-<img src="https://github.com/Zaniiiii/Fpt-Assignment1/blob/main/Assignment2/images/polymorphism.png?raw=true" width="500">
+<img src="https://github.com/Zaniiiii/Fpt-Assignment1/blob/main/Assignment2/images/polymorphism.jpg?raw=true" width="500">
 </p>
 
 To implement polymorphism in java, you can use Overriding, for example:
