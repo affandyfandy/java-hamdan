@@ -1,17 +1,22 @@
+import java.util.HashMap;
+
 public class assignment4 {
     public static int[] findSubarrayWithSumZero(int[] arr) {
-        for (int start = 0; start < arr.length; start++) {
-            int sum = 0;
-            // Iterate from the start index to the end of the array
-            for (int end = start; end < arr.length; end++) {
-                sum += arr[end];
-                // Check if the sum of the current subarray is zero
-                if (sum == 0) {
-                    return new int[]{start, end};
-                }
+        HashMap<Integer, Integer> sumMap = new HashMap<>();
+        int sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            // System.out.println(sum);
+
+            if (sum == 0) {
+                return new int[]{0, i};
+            }
+
+            if (sumMap.containsKey(sum)) {
+                return new int[]{sumMap.get(sum) + 1, i};
             }
         }
-        // Return an empty array if no subarray with sum zero is found
         System.out.println("No possible subarray, returning [-1,-1]");
         return new int[]{-1, -1};
     }
