@@ -35,7 +35,7 @@ class MyClass {
     String name;
 }
 ```
-<img src="Assignment5\images\singleton.png" width="1000">
+<img src="https://github.com/affandyfandy/java-hamdan/blob/main/secondLecture/Assignment6/images/fpt61.png" width="1000">
 
 
 ### Example 2
