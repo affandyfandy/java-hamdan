@@ -2,7 +2,9 @@
 
 In Java, memory management is a vital process. It is managed by Java automatically. The JVM divides the memory into two parts: stack memory and heap memory. From the perspective of Java, both are important memory areas but both are used for different purposes.
 
-img
+<p align="center">
+<img src="https://github.com/affandyfandy/java-hamdan/blob/main/lecture2/Assignment6/images/1.png?raw=true" width="500">
+</p>
 
 ## Stack Memory in Java
 The stack in Java is a memory area used to store local variables and method call information during the execution of a program. Each time a method is called, a new frame is created on top of the stack, which holds the method's local variables and information.
@@ -39,15 +41,11 @@ class MyClass {
     String name;
 }
 ```
-<<<<<<< HEAD:lecture2/Assignment6/README.md
-<img src="Assignment6\images\singleton.png" width="1000">
+<img src="https://github.com/affandyfandy/java-hamdan/blob/main/lecture2/Assignment6/images/2.png?raw=true" width="1000">
 
 ### Explanation
-The ```Main``` method creates an instance of ```MyClass``` and assigns it to the reference variable ```obj```, which is stored on the stack. This ```MyClass``` instance, containing an integer value ```10``` and a string reference to ```"Doe"```, resides in the heap. The ```modifyObject``` method is called with ```obj``` as an argument, creating another stack reference ```x``` that points to the same heap object. Consequently, any modifications made to ```x``` inside ```modifyObject``` will directly affect the same ```MyClass``` instance referenced by ```obj```. 
-=======
-<img src="https://github.com/affandyfandy/java-hamdan/blob/main/secondLecture/Assignment6/images/fpt61 (1).png" width="1000">
->>>>>>> f57214c8944db3758622e08985338a7d82f61e7d:secondLecture/Assignment6/README.md
 
+The ```Main``` method creates an instance of ```MyClass``` and assigns it to the reference variable ```obj```, which is stored on the stack. This ```MyClass``` instance, containing an integer value ```10``` and a string reference to ```"Doe"```, resides in the heap. The ```modifyObject``` method is called with ```obj``` as an argument, creating another stack reference ```x``` that points to the same heap object. Consequently, any modifications made to ```x``` inside ```modifyObject``` will directly affect the same ```MyClass``` instance referenced by ```obj```. 
 
 ### Example 2
 
@@ -74,8 +72,8 @@ class MyClass {
 }
 ```
 
-<img src="Assignment5\images\singleton.png" width="1000">
-<<<<<<< HEAD:lecture2/Assignment6/README.md
+<img src="https://github.com/affandyfandy/java-hamdan/blob/main/lecture2/Assignment6/images/3.png?raw=true" width="1000">
+
 
 ### Explanation
 
@@ -84,5 +82,3 @@ The ```Main``` method creates a ```MyClass``` instance on the heap, referenced b
 # Conclusion
 The Java stack and heap both are used to store information but each have a different uses. The stack is a specific part of a computer's memory that is used to store information about local variables and function calls. It is quick to access because it is easy to reach, but it has a limited amount of space. In contrast, the heap is a section of memory that can store larger amounts of data, though it may take slightly longer to access than the stack.
 
-=======
->>>>>>> f57214c8944db3758622e08985338a7d82f61e7d:secondLecture/Assignment6/README.md
