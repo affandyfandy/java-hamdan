@@ -1,6 +1,8 @@
 # Assignment 5 - Thread-Safe Singleton
 
-<img src="Assignment5\images\singleton.png" width="1000">
+<p align="center">
+<img src="https://github.com/Zaniiiii/Fpt-Assignment1/blob/main/Assignment2/images/oop.png?raw=true" width="500">
+</p>
 
 ## What is thread-safe singleton?
 
