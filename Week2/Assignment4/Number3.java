@@ -1,12 +1,12 @@
 import java.util.Arrays;
 
-public class MultiThread {
+public class Number3 {
 
     public static void main(String[] args) {
         int[] array = {38, 27, 43, 3, 9, 82, 10, 19, 50, 16, 35, 23};
         System.out.println("Original array: " + Arrays.toString(array));
 
-        MultiThread sorter = new MultiThread();
+        Number3 sorter = new Number3();
         sorter.parallelMergeSort(array, 0, array.length - 1);
 
         System.out.println("Sorted array: " + Arrays.toString(array));
