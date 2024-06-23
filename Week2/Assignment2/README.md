@@ -1,6 +1,5 @@
 # Question 1: what happen if implement 2 interface have same default method? How to solve? Demo in code.
 
-## The problem
 In Java, if you implement two interfaces that have the same default method, you will encounter a `compile-time error`. This happens because the compiler cannot determine which default method to use in the implementing class. To resolve this issue, you need to override the conflicting default method in your class and explicitly specify which interface's default method should be used if needed. Let me give you an example:
 
 ## Example
@@ -60,7 +59,7 @@ public class MyClass implements FirstInterface, SecondInterface {
     }
 }
 ```
-Output:
+## Output
 ```
 MyClass log: Logging from MyClass
 FirstInterface log: Logging from MyClass
