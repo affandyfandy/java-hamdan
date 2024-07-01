@@ -5,10 +5,10 @@ import java.util.*;
 public class Number3 {
 
     public static void main(String[] args) {
-        String inputFilePath = "input.csv"; // Change this to your input file path
-        String outputFilePath = "output.csv"; // Change this to your output file path
-        String keyField = "id"; // Change this to your key field name for CSV
-        int keyFieldPosition = 0; // Change this to your key field position for TXT (0-based index)
+        String inputFilePath = "input.csv"; 
+        String outputFilePath = "output.csv"; 
+        String keyField = "id";
+        int keyFieldPosition = 0; 
         boolean isCsv = inputFilePath.endsWith(".csv");
 
         try {
