@@ -9,7 +9,7 @@ This assignment demonstrates the creation of an `EmailService` interface and its
 Define an interface named `EmailService` with a method to send emails.
 
 ```java
-package com.example.service;
+package lecture7.assignment2.service;
 
 public interface EmailService {
     void sendEmail(String to, String subject, String body);
@@ -21,7 +21,7 @@ public interface EmailService {
 Implement the `EmailService` interface in a class named `EmailServiceImpl`.
 
 ```java
-package com.example.service;
+package lecture7.assignment2.service;
 
 import org.springframework.stereotype.Service;
 
@@ -49,7 +49,7 @@ public class EmailServiceImpl implements EmailService {
 Create a class named `EmployeeService` that uses `EmailService` to send emails to employees. We'll demonstrate DI using constructor, field, and setter injection.
 
 ```java
-package com.example.service;
+package lecture7.assignment2.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -106,13 +106,13 @@ Ensure your application is properly configured to use Spring Framework's compone
 Add the following configuration to ensure that Spring scans the package for components.
 
 ```java
-package com.example;
+package lecture7.assignment2;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "com.example")
+@ComponentScan(basePackages = "lecture7.assignment2")
 public class AppConfig {
 }
 ```
@@ -126,10 +126,10 @@ public class AppConfig {
 Create a main class to run your Spring application.
 
 ```java
-package com.example;
+package lecture7.assignment2;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.example.service.EmployeeService;
+import lecture7.assignment2.service.EmployeeService;
 
 public class Application {
     public static void main(String[] args) {
@@ -149,17 +149,7 @@ public class Application {
 
 
 **Output**
-```
-Sending email to employee@example.com
-Subject: Work Update
-Body: This is a work update message.
-Sending email to employee@example.com
-Subject: Work Update
-Body: This is a work update message.
-Sending email to employee@example.com
-Subject: Work Update
-Body: This is a work update message.
-```
+![alt text](image-1.png)
 
 # Number 2 : Comparison of Dependency Injection Types
 
@@ -351,7 +341,7 @@ public class ClassB implements InterfaceB {
 - **Example**:
   ```java
   @Configuration
-  @ComponentScan(basePackages = "com.example")
+  @ComponentScan(basePackages = "lecture7.assignment2")
   public class AppConfig {
   }
 
@@ -390,7 +380,7 @@ public class ClassB implements InterfaceB {
   }
 
   @Configuration
-  @ComponentScan(basePackages = "com.example")
+  @ComponentScan(basePackages = "lecture7.assignment2")
   public class AppConfig {
   }
 
@@ -417,7 +407,7 @@ public class ClassB implements InterfaceB {
   }
 
   @Configuration
-  @ComponentScan(basePackages = "com.example")
+  @ComponentScan(basePackages = "lecture7.assignment2")
   public class AppConfig {
   }
 
@@ -458,7 +448,7 @@ public class ClassB implements InterfaceB {
   }
 
   @Configuration
-  @ComponentScan(basePackages = "com.example")
+  @ComponentScan(basePackages = "lecture7.assignment2")
   public class AppConfig {
   }
 
@@ -486,7 +476,7 @@ public class ClassB implements InterfaceB {
   }
 
   @Configuration
-  @ComponentScan(basePackages = "com.example")
+  @ComponentScan(basePackages = "lecture7.assignment2")
   public class AppConfig {
   }
 
@@ -545,7 +535,7 @@ public class ClassB implements InterfaceB {
   }
 
   @Configuration
-  @ComponentScan(basePackages = "com.example")
+  @ComponentScan(basePackages = "lecture7.assignment2")
   public class AppConfig {
   }
 
@@ -625,7 +615,7 @@ public class ClassB implements InterfaceB {
   }
 
   @Configuration
-  @ComponentScan(basePackages = "com.example")
+  @ComponentScan(basePackages = "lecture7.assignment2")
   public class AppConfig {
   }
 

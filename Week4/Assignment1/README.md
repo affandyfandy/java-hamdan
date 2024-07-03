@@ -195,6 +195,10 @@ public class SimpleDemoApplication {
 - **context.getBean(Employee.class)**: Retrieves the `Employee` bean from the Spring context.
 - **employee.working()**: Calls the `working()` method on the `Employee` bean to demonstrate that the bean has been correctly instantiated and injected.
 
+## Output
+
+![alt text](image-1.png)
+
 # Number 3: Using Setter-Based Dependency Injection and Field Dependency for #2
 
 Now that we have the java configuration we will modify the configuration to use setter-based and field-based dependency injection.
