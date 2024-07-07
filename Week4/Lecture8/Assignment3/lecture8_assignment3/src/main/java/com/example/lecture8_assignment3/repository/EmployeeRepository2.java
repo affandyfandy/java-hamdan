@@ -13,10 +13,10 @@ import org.springframework.stereotype.Repository;
 import com.example.lecture8_assignment3.model.Employee;
 
 @Repository
-public class EmployeeRepository {
+public class EmployeeRepository2 {
 
     @Autowired
-    @Qualifier("jdbcTemplate1")
+    @Qualifier("jdbcTemplate2")
     private JdbcTemplate jdbcTemplate;
 
     public List<Employee> findAll() {
