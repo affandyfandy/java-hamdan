@@ -2,13 +2,13 @@ package com.example.lecture8_assignment3.config;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -16,25 +16,47 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class DataSourceConfig {
 
+    @Value("${spring.datasource1.driver-class-name}")
+    private String ds1DriverClassName;
+
+    @Value("${spring.datasource1.url}")
+    private String ds1Url;
+
+    @Value("${spring.datasource1.username}")
+    private String ds1Username;
+
+    @Value("${spring.datasource1.password}")
+    private String ds1Password;
+
+    @Value("${spring.datasource2.driver-class-name}")
+    private String ds2DriverClassName;
+
+    @Value("${spring.datasource2.url}")
+    private String ds2Url;
+
+    @Value("${spring.datasource2.username}")
+    private String ds2Username;
+
+    @Value("${spring.datasource2.password}")
+    private String ds2Password;
+
     @Bean(name = "datasource1")
-    @ConfigurationProperties(prefix = "spring.datasource1")
     public DataSource dataSource1() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/employee_ass2");
-        dataSource.setUsername("root");
-        dataSource.setPassword("dayak1352");
+        dataSource.setDriverClassName(ds1DriverClassName);
+        dataSource.setUrl(ds1Url);
+        dataSource.setUsername(ds1Username);
+        dataSource.setPassword(ds1Password);
         return dataSource;
     }
 
     @Bean(name = "datasource2")
-    @ConfigurationProperties(prefix = "spring.datasource2")
     public DataSource dataSource2() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/employee_ass2_second");
-        dataSource.setUsername("root");
-        dataSource.setPassword("dayak1352");
+        dataSource.setDriverClassName(ds2DriverClassName);
+        dataSource.setUrl(ds2Url);
+        dataSource.setUsername(ds2Username);
+        dataSource.setPassword(ds2Password);
         return dataSource;
     }
 

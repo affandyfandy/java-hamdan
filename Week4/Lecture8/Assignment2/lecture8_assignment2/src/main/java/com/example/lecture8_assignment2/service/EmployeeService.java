@@ -1,17 +1,21 @@
 package com.example.lecture8_assignment2.service;
 
-import com.example.lecture8_assignment2.model.Employee;
-import com.example.lecture8_assignment2.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.example.lecture8_assignment2.model.Employee;
+import com.example.lecture8_assignment2.repository.EmployeeRepository;
 
 @Service
 public class EmployeeService {
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository;
+
+    // Constructor Injection
+    public EmployeeService(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
 
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
