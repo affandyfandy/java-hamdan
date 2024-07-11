@@ -1,4 +1,4 @@
-package lecture9.assignment3;
+package lecture9.assignment2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
