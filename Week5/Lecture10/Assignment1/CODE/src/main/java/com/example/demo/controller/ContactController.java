@@ -53,9 +53,13 @@ public class ContactController {
 
     @GetMapping
     public List<ContactDTO> getAllContacts() {
-        return contactRepository.findAll().stream()
+        List<Contact> contacts = contactRepository.findAll();
+        System.out.println("Fetched contacts: " + contacts);
+        List<ContactDTO> contactDTOs = contacts.stream()
                 .map(ContactMapper.INSTANCE::contactToContactDTO)
                 .collect(Collectors.toList());
+        System.out.println("Mapped ContactDTOs: " + contactDTOs);
+        return contactDTOs;
     }
 
     @GetMapping("/{id}")
@@ -107,7 +111,7 @@ public class ContactController {
                 Contact contact = new Contact();
                 contact.setId(row.getCell(0).getStringCellValue());
                 contact.setName(row.getCell(1).getStringCellValue());
-                
+
                 Cell dateCell = row.getCell(2);
                 if (dateCell != null) {
                     Date dob = null;
@@ -124,7 +128,7 @@ public class ContactController {
                 contact.setSalary(row.getCell(5).getNumericCellValue());
                 contact.setEmail(row.getCell(6).getStringCellValue());
                 contact.setPhone(row.getCell(7).getStringCellValue());
-                
+
                 contactRepository.save(contact);
             }
             return ResponseEntity.status(HttpStatus.OK).body("Contacts imported successfully");

@@ -14,18 +14,29 @@ UUID (Universally Unique Identifier) is used as the primary key for the `Contact
 ```java
 package com.example.demo.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import java.util.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Contact {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @NotNull
@@ -51,12 +62,7 @@ public class Contact {
 
     @Pattern(regexp = "^\\+62[0-9]{10,}$", message = "Phone number should follow Indonesian format")
     private String phone;
-
-    public Contact() {
-    }
-
-    // constructor, getter and setter
-
+}
 ```
 
 **Explanation**
@@ -79,10 +85,16 @@ DTO (Data Transfer Object) is used to encapsulate data and transfer it between l
 ```java
 package com.example.demo.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ContactDTO {
-
     private String id;
     private String name;
     private Date dob;
@@ -91,11 +103,6 @@ public class ContactDTO {
     private Double salary;
     private String email;
     private String phone;
-
-    public ContactDTO() {
-    }
-
-    // constructor, getter, setter
 }
 ```
 - The `ContactDTO` class is used to encapsulate data for transferring between layers.
