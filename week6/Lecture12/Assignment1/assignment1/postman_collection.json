@@ -1,0 +1,413 @@
+{
+  "info": {
+    "_postman_id": "your-postman-collection-id",
+    "name": "Employee Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Employee By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/employees/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Employee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"birthDate\": \"1979-12-31\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"gender\": \"M\",\n    \"hireDate\": \"2019-12-31\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Employee",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"birthDate\": \"1980-01-01\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"gender\": \"F\",\n    \"hireDate\": \"2020-01-01\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/employees/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/employees/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Salaries by Employee ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/employees/1/salaries",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees",
+            "1",
+            "salaries"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Salary",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"salary\": 50000,\n    \"fromDate\": \"2020-01-01\",\n    \"toDate\": \"2023-01-01\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/employees/1/salaries",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees",
+            "1",
+            "salaries"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Salary",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"salary\": 55000,\n    \"toDate\": \"2024-01-01\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/employees/1/salaries/2020-01-01",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees",
+            "1",
+            "salaries",
+            "2020-01-01"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Titles by Employee ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/employees/1/titles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees",
+            "1",
+            "titles"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Title",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Software Engineer\",\n    \"fromDate\": \"2020-01-01\",\n    \"toDate\": \"2023-01-01\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/employees/1/titles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees",
+            "1",
+            "titles"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Title",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Senior Software Engineer\",\n    \"toDate\": \"2024-01-01\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/employees/1/titles/2020-01-01",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "employees",
+            "1",
+            "titles",
+            "2020-01-01"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Departments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/departments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "departments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Department By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/departments/d001",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "departments",
+            "d001"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Department",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"deptNo\": \"d004\",\n    \"deptName\": \"IT\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/departments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "departments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Department",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"deptName\": \"Information Technology\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/departments/d004",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "departments",
+            "d004"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Department",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/departments/d004",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "departments",
+            "d004"
+          ]
+        }
+      }
+    }
+  ]
+}
