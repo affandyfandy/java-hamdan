@@ -186,4 +186,4 @@ mvn spring-boot:run
 
 ### 4. Testing the API
 
-You can use Postman or any other API testing tool to interact with the endpoints. you can use the postman collection
+You can use Postman or any other API testing tool to interact with the endpoints. you can use the [postman collection](https://github.com/affandyfandy/java-hamdan/blob/week6/week6/Lecture11/Assignment1/assignment1/postman_collection.json)
