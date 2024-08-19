@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/products/**
+          filters:
+            - name: ApiKeyFilter
+        - id: invoice-service
+          uri: lb://invoice-service
+          predicates:
+            - Path=/invoices/**
+          filters:
+            - name: ApiKeyFilter
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
